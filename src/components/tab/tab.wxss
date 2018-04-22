@@ -1,0 +1,55 @@
+/* tab */
+.tab {
+  display: flex;
+  margin: 0;
+  position: relative;
+  z-index: 0;
+  color: rgb(255,94,83);
+}
+.tab::after {
+   content: "";
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #b2b2b2;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.tab-item {
+  position: relative;
+  flex: 1;
+  display: block;
+  line-height: 100rpx;
+  text-align: center;
+  color: #585858;
+}
+.tab-item.active {
+  color:currentColor;
+  background-color: #fff;
+}
+.tab-item.active::before {
+    content: "";
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -35%;
+    z-index: 4;
+    background-color: currentColor;
+}
+.tab>.tab-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: 1px;
+  height: 30%;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+  border-right: 1px solid #d9d9d9;
+}

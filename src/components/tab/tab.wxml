@@ -1,0 +1,10 @@
+<!--pages/components/tab/tab.wxml-->
+<view>
+<view class="tab">
+  <text wx:for="{{list}}"
+    data-index="{{index}}"
+    class="tab-item {{index==activeId ? 'active' : ''}}"
+    bindtap="clickTab">{{item.label}}
+  </text>
+</view>
+</view>
